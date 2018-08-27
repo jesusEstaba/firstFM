@@ -37,10 +37,10 @@ export default class App extends Component {
         <Text style={styles.welcome}>
           Welcome to first.FM!
         </Text>
-        <Button title='Home' onPress={this.loadHomeScreen} />
-        <Button title='Tops' onPress={this.loadTopsScreen}  />
-        <Button title='Artist' onPress={this.loadArtistScreen}  />
-        <Button title='ArtistTrack' onPress={this.loadArtistTrackScreen}  />
+        <Button title='Home' color="#07fff4" onPress={this.loadHomeScreen} />
+        <Button title='Tops'  color="#e91e63" onPress={this.loadTopsScreen}  />
+        <Button title='Artist' color="#ffc107" onPress={this.loadArtistScreen}  />
+        <Button title='ArtistTrack' color="#333333" onPress={this.loadArtistTrackScreen}  />
       
         { this.state.screen }
       </View>
@@ -51,8 +51,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
