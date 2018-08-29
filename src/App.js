@@ -14,17 +14,16 @@ import ArtistTrack from './screens/ArtistTrack';
 export default class App extends Component {
   
   state = {
-    screen: <Home />
   }
 
   loadHomeScreen = () => {
-    this.setState({ screen:<Home /> })
+    this.setState({ screen:<Home artistScreen = {this.loadArtistScreen} /> })
   }
   loadTopsScreen = () => {
     this.setState({ screen:<TopTracks /> })
   }
-  loadArtistScreen = () => {
-    this.setState({ screen:<Artist /> })
+  loadArtistScreen = (props) => {
+    this.setState({ screen:<Artist {...props} /> })
   }
   loadArtistTrackScreen = () => {
     this.setState({ screen:<ArtistTrack /> })
@@ -39,7 +38,6 @@ export default class App extends Component {
         </Text>
         <Button title='Home' color="#07fff4" onPress={this.loadHomeScreen} />
         <Button title='Tops'  color="#e91e63" onPress={this.loadTopsScreen}  />
-        <Button title='Artist' color="#ffc107" onPress={this.loadArtistScreen}  />
         <Button title='ArtistTrack' color="#333333" onPress={this.loadArtistTrackScreen}  />
       
         { this.state.screen }

@@ -35,7 +35,7 @@ export default class Home extends Component {
                 <FlatList 
                     keyExtractor={ (item, index) => item.mbid }
                     data = {this.state.artists}
-                    renderItem = { ({item}) => <SimpleArtist {...item} /> }
+                    renderItem = { ({item}) => <SimpleArtist artistScreen={this.props.artistScreen}  {...item} /> }
                 />
             </View>
         )

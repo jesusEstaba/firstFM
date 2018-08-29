@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  Image,
   TouchableHighlight ,
 } from 'react-native';
 
+import ArtistImage from './ArtistImage'
 
 export default class SimpleArtist extends Component {
-    render() {
-        let image = this.props.image[2]['#text']
-        image = image ? image : 'https://www.indigenousmusicawards.com/img/placeholder-music.png'
+    tap = () => {
+        this.props.artistScreen(this.props)
+    }
 
+    render() {
         return (
-            <TouchableHighlight onPress={ () => alert(this.props.name) }>
+            <TouchableHighlight onPress={ this.tap }>
                 <View style={ {alignItems:'center'} }>
-                    <Image source={ {uri:image, width:150, height:150} } />
+                    <ArtistImage image={ this.props.image } />
                     <Text style={ {fontSize:20} }>{ this.props.name }</Text>
                 </View>
             </TouchableHighlight>
